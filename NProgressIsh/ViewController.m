@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet NProgressIshView *nProgressIshViewIB;
 
+@property (nonatomic, strong) NProgressIshView *progTop;
+@property (nonatomic, strong) NProgressIshView *progBottom;
+
 @end
 
 @implementation ViewController
@@ -23,6 +26,18 @@
     [super viewDidLoad];
 
     [_nProgressIshViewIB setForegroundColor:[UIColor redColor]];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    _progTop = [NProgressIshView showAtTopOfView:self.view];
+    [_progTop setTrickle:YES];
+    
+    _progBottom = [NProgressIshView showAtBottomOfView:self.view];
+    [_progBottom setTrickle:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,11 +53,20 @@
 }
 
 - (IBAction)onClickDecrement:(id)sender {
-    [_nProgressIshViewIB setProgress:(_nProgressIshViewIB.progress - 0.1f)];
+//    [_nProgressIshViewIB setProgress:(_nProgressIshViewIB.progress - 0.1f)];
+    NSInteger count = [NProgressIshView hideAllProgressForView:self.view];
+    NSLog(@"Count to hide - %d", count);
 }
 
 - (IBAction)onClickReloadView:(id)sender {
+    [_progTop setTrickle:NO];
+    [_progBottom setTrickle:NO];
     
+    [_progTop setProgress:0.0f animated:NO];
+    [_progBottom setProgress:0.0f animated:NO];
+    
+    [_progTop setTrickle:YES];
+    [_progBottom setTrickle:YES];
 }
 
 @end
