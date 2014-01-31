@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		036CEDE5189BC5C300C09F88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEDE4189BC5C300C09F88 /* Foundation.framework */; };
+		036CEDE7189BC5C300C09F88 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEDE6189BC5C300C09F88 /* CoreGraphics.framework */; };
+		036CEDE9189BC5C300C09F88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEDE8189BC5C300C09F88 /* UIKit.framework */; };
+		036CEDEF189BC5C300C09F88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 036CEDED189BC5C300C09F88 /* InfoPlist.strings */; };
+		036CEDF1189BC5C300C09F88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CEDF0189BC5C300C09F88 /* main.m */; };
+		036CEDF5189BC5C300C09F88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CEDF4189BC5C300C09F88 /* AppDelegate.m */; };
+		036CEDF8189BC5C300C09F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036CEDF6189BC5C300C09F88 /* Main.storyboard */; };
+		036CEDFB189BC5C300C09F88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CEDFA189BC5C300C09F88 /* ViewController.m */; };
+		036CEDFD189BC5C300C09F88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036CEDFC189BC5C300C09F88 /* Images.xcassets */; };
+		036CEE04189BC5C300C09F88 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEE03189BC5C300C09F88 /* XCTest.framework */; };
+		036CEE05189BC5C300C09F88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEDE4189BC5C300C09F88 /* Foundation.framework */; };
+		036CEE06189BC5C300C09F88 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036CEDE8189BC5C300C09F88 /* UIKit.framework */; };
+		036CEE0E189BC5C300C09F88 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 036CEE0C189BC5C300C09F88 /* InfoPlist.strings */; };
+		036CEE10189BC5C300C09F88 /* NProgressIshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CEE0F189BC5C300C09F88 /* NProgressIshTests.m */; };
+		036CEE1D189BC61E00C09F88 /* NProgressIshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 036CEE1C189BC61E00C09F88 /* NProgressIshView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		036CEE07189BC5C300C09F88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 036CEDD9189BC5C300C09F88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 036CEDE0189BC5C300C09F88;
+			remoteInfo = NProgressIsh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		036CEDE1189BC5C300C09F88 /* NProgressIsh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NProgressIsh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		036CEDE4189BC5C300C09F88 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		036CEDE6189BC5C300C09F88 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		036CEDE8189BC5C300C09F88 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		036CEDEC189BC5C300C09F88 /* NProgressIsh-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NProgressIsh-Info.plist"; sourceTree = "<group>"; };
+		036CEDEE189BC5C300C09F88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		036CEDF0189BC5C300C09F88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		036CEDF2189BC5C300C09F88 /* NProgressIsh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NProgressIsh-Prefix.pch"; sourceTree = "<group>"; };
+		036CEDF3189BC5C300C09F88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		036CEDF4189BC5C300C09F88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		036CEDF7189BC5C300C09F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		036CEDF9189BC5C300C09F88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		036CEDFA189BC5C300C09F88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		036CEDFC189BC5C300C09F88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		036CEE02189BC5C300C09F88 /* NProgressIshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NProgressIshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		036CEE03189BC5C300C09F88 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		036CEE0B189BC5C300C09F88 /* NProgressIshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NProgressIshTests-Info.plist"; sourceTree = "<group>"; };
+		036CEE0D189BC5C300C09F88 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		036CEE0F189BC5C300C09F88 /* NProgressIshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NProgressIshTests.m; sourceTree = "<group>"; };
+		036CEE1B189BC61E00C09F88 /* NProgressIshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NProgressIshView.h; sourceTree = "<group>"; };
+		036CEE1C189BC61E00C09F88 /* NProgressIshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NProgressIshView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		036CEDDE189BC5C300C09F88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEDE7189BC5C300C09F88 /* CoreGraphics.framework in Frameworks */,
+				036CEDE9189BC5C300C09F88 /* UIKit.framework in Frameworks */,
+				036CEDE5189BC5C300C09F88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036CEDFF189BC5C300C09F88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEE04189BC5C300C09F88 /* XCTest.framework in Frameworks */,
+				036CEE06189BC5C300C09F88 /* UIKit.framework in Frameworks */,
+				036CEE05189BC5C300C09F88 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		036CEDD8189BC5C300C09F88 = {
+			isa = PBXGroup;
+			children = (
+				036CEE1A189BC5FE00C09F88 /* Classes */,
+				036CEDEA189BC5C300C09F88 /* NProgressIsh */,
+				036CEE09189BC5C300C09F88 /* NProgressIshTests */,
+				036CEDE3189BC5C300C09F88 /* Frameworks */,
+				036CEDE2189BC5C300C09F88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		036CEDE2189BC5C300C09F88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				036CEDE1189BC5C300C09F88 /* NProgressIsh.app */,
+				036CEE02189BC5C300C09F88 /* NProgressIshTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		036CEDE3189BC5C300C09F88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				036CEDE4189BC5C300C09F88 /* Foundation.framework */,
+				036CEDE6189BC5C300C09F88 /* CoreGraphics.framework */,
+				036CEDE8189BC5C300C09F88 /* UIKit.framework */,
+				036CEE03189BC5C300C09F88 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		036CEDEA189BC5C300C09F88 /* NProgressIsh */ = {
+			isa = PBXGroup;
+			children = (
+				036CEDF3189BC5C300C09F88 /* AppDelegate.h */,
+				036CEDF4189BC5C300C09F88 /* AppDelegate.m */,
+				036CEDF6189BC5C300C09F88 /* Main.storyboard */,
+				036CEDF9189BC5C300C09F88 /* ViewController.h */,
+				036CEDFA189BC5C300C09F88 /* ViewController.m */,
+				036CEDFC189BC5C300C09F88 /* Images.xcassets */,
+				036CEDEB189BC5C300C09F88 /* Supporting Files */,
+			);
+			path = NProgressIsh;
+			sourceTree = "<group>";
+		};
+		036CEDEB189BC5C300C09F88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				036CEDEC189BC5C300C09F88 /* NProgressIsh-Info.plist */,
+				036CEDED189BC5C300C09F88 /* InfoPlist.strings */,
+				036CEDF0189BC5C300C09F88 /* main.m */,
+				036CEDF2189BC5C300C09F88 /* NProgressIsh-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		036CEE09189BC5C300C09F88 /* NProgressIshTests */ = {
+			isa = PBXGroup;
+			children = (
+				036CEE0F189BC5C300C09F88 /* NProgressIshTests.m */,
+				036CEE0A189BC5C300C09F88 /* Supporting Files */,
+			);
+			path = NProgressIshTests;
+			sourceTree = "<group>";
+		};
+		036CEE0A189BC5C300C09F88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				036CEE0B189BC5C300C09F88 /* NProgressIshTests-Info.plist */,
+				036CEE0C189BC5C300C09F88 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		036CEE1A189BC5FE00C09F88 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				036CEE1B189BC61E00C09F88 /* NProgressIshView.h */,
+				036CEE1C189BC61E00C09F88 /* NProgressIshView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		036CEDE0189BC5C300C09F88 /* NProgressIsh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 036CEE13189BC5C300C09F88 /* Build configuration list for PBXNativeTarget "NProgressIsh" */;
+			buildPhases = (
+				036CEDDD189BC5C300C09F88 /* Sources */,
+				036CEDDE189BC5C300C09F88 /* Frameworks */,
+				036CEDDF189BC5C300C09F88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NProgressIsh;
+			productName = NProgressIsh;
+			productReference = 036CEDE1189BC5C300C09F88 /* NProgressIsh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		036CEE01189BC5C300C09F88 /* NProgressIshTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 036CEE16189BC5C300C09F88 /* Build configuration list for PBXNativeTarget "NProgressIshTests" */;
+			buildPhases = (
+				036CEDFE189BC5C300C09F88 /* Sources */,
+				036CEDFF189BC5C300C09F88 /* Frameworks */,
+				036CEE00189BC5C300C09F88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				036CEE08189BC5C300C09F88 /* PBXTargetDependency */,
+			);
+			name = NProgressIshTests;
+			productName = NProgressIshTests;
+			productReference = 036CEE02189BC5C300C09F88 /* NProgressIshTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		036CEDD9189BC5C300C09F88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Josh Holtz";
+				TargetAttributes = {
+					036CEE01189BC5C300C09F88 = {
+						TestTargetID = 036CEDE0189BC5C300C09F88;
+					};
+				};
+			};
+			buildConfigurationList = 036CEDDC189BC5C300C09F88 /* Build configuration list for PBXProject "NProgressIsh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 036CEDD8189BC5C300C09F88;
+			productRefGroup = 036CEDE2189BC5C300C09F88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				036CEDE0189BC5C300C09F88 /* NProgressIsh */,
+				036CEE01189BC5C300C09F88 /* NProgressIshTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		036CEDDF189BC5C300C09F88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEDFD189BC5C300C09F88 /* Images.xcassets in Resources */,
+				036CEDEF189BC5C300C09F88 /* InfoPlist.strings in Resources */,
+				036CEDF8189BC5C300C09F88 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036CEE00189BC5C300C09F88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEE0E189BC5C300C09F88 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		036CEDDD189BC5C300C09F88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEDFB189BC5C300C09F88 /* ViewController.m in Sources */,
+				036CEDF5189BC5C300C09F88 /* AppDelegate.m in Sources */,
+				036CEDF1189BC5C300C09F88 /* main.m in Sources */,
+				036CEE1D189BC61E00C09F88 /* NProgressIshView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		036CEDFE189BC5C300C09F88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036CEE10189BC5C300C09F88 /* NProgressIshTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		036CEE08189BC5C300C09F88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 036CEDE0189BC5C300C09F88 /* NProgressIsh */;
+			targetProxy = 036CEE07189BC5C300C09F88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		036CEDED189BC5C300C09F88 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036CEDEE189BC5C300C09F88 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		036CEDF6189BC5C300C09F88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036CEDF7189BC5C300C09F88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		036CEE0C189BC5C300C09F88 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				036CEE0D189BC5C300C09F88 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		036CEE11189BC5C300C09F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		036CEE12189BC5C300C09F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		036CEE14189BC5C300C09F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NProgressIsh/NProgressIsh-Prefix.pch";
+				INFOPLIST_FILE = "NProgressIsh/NProgressIsh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		036CEE15189BC5C300C09F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NProgressIsh/NProgressIsh-Prefix.pch";
+				INFOPLIST_FILE = "NProgressIsh/NProgressIsh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		036CEE17189BC5C300C09F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NProgressIsh.app/NProgressIsh";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NProgressIsh/NProgressIsh-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NProgressIshTests/NProgressIshTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		036CEE18189BC5C300C09F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NProgressIsh.app/NProgressIsh";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NProgressIsh/NProgressIsh-Prefix.pch";
+				INFOPLIST_FILE = "NProgressIshTests/NProgressIshTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		036CEDDC189BC5C300C09F88 /* Build configuration list for PBXProject "NProgressIsh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036CEE11189BC5C300C09F88 /* Debug */,
+				036CEE12189BC5C300C09F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		036CEE13189BC5C300C09F88 /* Build configuration list for PBXNativeTarget "NProgressIsh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036CEE14189BC5C300C09F88 /* Debug */,
+				036CEE15189BC5C300C09F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		036CEE16189BC5C300C09F88 /* Build configuration list for PBXNativeTarget "NProgressIshTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				036CEE17189BC5C300C09F88 /* Debug */,
+				036CEE18189BC5C300C09F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 036CEDD9189BC5C300C09F88 /* Project object */;
+}
