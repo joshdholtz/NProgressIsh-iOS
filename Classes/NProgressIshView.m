@@ -135,21 +135,23 @@ static float const DEFAULT_HEIGHT = 8.0f;
 
 - (void)setForegroundColor:(UIColor *)foregroundColor {
     [_viewProgress setBackgroundColor:foregroundColor];
-    
-    // Glow
-    [_viewProgress.layer setShadowColor:foregroundColor.CGColor];
-    [_viewProgress.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
-    [_viewProgress.layer setShadowOpacity:0.8f];
-    [_viewProgress.layer setShadowRadius:3.0f];
-    
     [_viewIndefiniteProgress setBackgroundColor:foregroundColor];
     
     // Glow
+    [_viewProgress.layer setShadowColor:foregroundColor.CGColor];
     [_viewIndefiniteProgress.layer setShadowColor:foregroundColor.CGColor];
-    [_viewIndefiniteProgress.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
-    [_viewIndefiniteProgress.layer setShadowOpacity:0.8f];
-    [_viewIndefiniteProgress.layer setShadowRadius:3.0f];
+
+    [self setGlow:CGSizeMake(0.0f, 0.0f) opacity:0.5f raidus:3.0f];
+}
+
+- (void)setGlow:(CGSize)size opacity:(CGFloat)opacity raidus:(CGFloat)radius {
+    [_viewProgress.layer setShadowOffset:size];
+    [_viewProgress.layer setShadowOpacity:opacity];
+    [_viewProgress.layer setShadowRadius:radius];
     
+    [_viewIndefiniteProgress.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
+    [_viewIndefiniteProgress.layer setShadowOpacity:opacity];
+    [_viewIndefiniteProgress.layer setShadowRadius:radius];
 }
 
 - (void)setProgress:(float)progress {

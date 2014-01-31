@@ -25,6 +25,8 @@
 + (NProgressIshView*)progressForView:(UIView*)view;
 + (NSArray*)allProgressForView:(UIView*)view;
 
+- (void)setGlow:(CGSize)size opacity:(CGFloat)opacity raidus:(CGFloat)radius;
+
 - (void)trickle:(BOOL)trickle;
 - (void)indefinite:(BOOL)indefinite;
 - (void)done;
