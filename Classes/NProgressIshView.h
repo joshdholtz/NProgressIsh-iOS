@@ -15,7 +15,6 @@
 @property (nonatomic, assign) float animationTime;
 @property (nonatomic, assign) BOOL removeFromSuperviewOnHide;
 
-@property (nonatomic, assign) BOOL trickle;
 @property (nonatomic, assign) float trickleRate;
 @property (nonatomic, assign) float trickleSpeed;
 
@@ -26,7 +25,8 @@
 + (NProgressIshView*)progressForView:(UIView*)view;
 + (NSArray*)allProgressForView:(UIView*)view;
 
-- (void)start;
+- (void)trickle:(BOOL)trickle;
+- (void)indefinite:(BOOL)indefinite;
 - (void)done;
 - (void)setProgress:(float)progress animated:(BOOL)animated;
 

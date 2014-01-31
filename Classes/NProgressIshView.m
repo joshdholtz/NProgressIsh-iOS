@@ -8,10 +8,16 @@
 
 #import "NProgressIshView.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface NProgressIshView()
 
 @property (nonatomic, strong) UIView *viewProgress;
-@property (nonatomic, strong) NSTimer *trickleTimer;
+@property (nonatomic, strong) UIView *viewIndefiniteProgress;
+
+@property (nonatomic, assign) BOOL trickle;
+@property (nonatomic, assign) BOOL indefinite;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -110,16 +116,40 @@ static float const DEFAULT_HEIGHT = 8.0f;
     _trickleRate = 0.05f;
     _trickleSpeed = 0.5f;
     
+    [self setClipsToBounds:NO];
+    
     // Sets up progress view
     _viewProgress = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 0.0f, CGRectGetHeight(self.frame))];
     [_viewProgress setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    [_viewProgress setClipsToBounds:NO];
     [self addSubview:_viewProgress];
+    
+    // Sets up indefinite progress view
+    _viewIndefiniteProgress = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.frame), 0.0f, 0.0f, CGRectGetHeight(self.frame))];
+    [_viewIndefiniteProgress setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
+    [_viewIndefiniteProgress setClipsToBounds:NO];
+    [self addSubview:_viewIndefiniteProgress];
 }
 
 #pragma mark - Public
 
 - (void)setForegroundColor:(UIColor *)foregroundColor {
     [_viewProgress setBackgroundColor:foregroundColor];
+    
+    // Glow
+    [_viewProgress.layer setShadowColor:foregroundColor.CGColor];
+    [_viewProgress.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
+    [_viewProgress.layer setShadowOpacity:0.8f];
+    [_viewProgress.layer setShadowRadius:3.0f];
+    
+    [_viewIndefiniteProgress setBackgroundColor:foregroundColor];
+    
+    // Glow
+    [_viewIndefiniteProgress.layer setShadowColor:foregroundColor.CGColor];
+    [_viewIndefiniteProgress.layer setShadowOffset:CGSizeMake(0.0f, 0.0f)];
+    [_viewIndefiniteProgress.layer setShadowOpacity:0.8f];
+    [_viewIndefiniteProgress.layer setShadowRadius:3.0f];
+    
 }
 
 - (void)setProgress:(float)progress {
@@ -155,8 +185,8 @@ static float const DEFAULT_HEIGHT = 8.0f;
 }
 
 - (void)done {
-    [_trickleTimer invalidate];
-    _trickleTimer = nil;
+    [_timer invalidate];
+    _timer = nil;
     
     [UIView animateWithDuration:_animationTime animations:^{
         [self setAlpha:0.0f];
@@ -168,15 +198,40 @@ static float const DEFAULT_HEIGHT = 8.0f;
     }];
 }
 
-- (void)setTrickle:(BOOL)trickle {
-    _trickle = trickle;
-    
-    if (_trickle == YES && _trickleTimer == nil) {
+- (void)trickle:(BOOL)trickle {
+    if (trickle == YES && _timer == nil) {
+        _trickle = trickle;
+        
+        [_timer invalidate];
+        _timer = nil;
+        
         [self start];
-        _trickleTimer = [NSTimer scheduledTimerWithTimeInterval:_trickleSpeed target:self selector:@selector(onTrickle) userInfo:nil repeats:YES];
-    } else if (_trickle == NO) {
-        [_trickleTimer invalidate];
-        _trickleTimer = nil;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:_trickleSpeed target:self selector:@selector(onTrickle) userInfo:nil repeats:YES];
+    } else if (trickle == NO) {
+        _trickle = trickle;
+        
+        [_timer invalidate];
+        _timer = nil;
+    }
+}
+
+- (void)indefinite:(BOOL)indefinite {
+    if (indefinite == YES && _timer == nil) {
+        _indefinite = indefinite;
+        
+        [self setProgress:0.0f animated:0.0];
+        
+        [_timer invalidate];
+        _timer = nil;
+        
+        [self start];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteGrow) userInfo:nil repeats:NO];
+    } else if (indefinite == NO) {
+        _indefinite = indefinite;
+        [_viewIndefiniteProgress setFrame:CGRectMake(CGRectGetMidX(self.frame), 0.0f, 0.0f, CGRectGetHeight(self.frame))];
+        
+        [_timer invalidate];
+        _timer = nil;
     }
 }
 
@@ -186,11 +241,41 @@ static float const DEFAULT_HEIGHT = 8.0f;
     [self setProgress:(_progress + _trickleRate)];
     if (_progress >= 1.0f) {
         
-        [_trickleTimer invalidate];
-        _trickleTimer = nil;
+        [_timer invalidate];
+        _timer = nil;
         
         [self done];
     }
+}
+
+- (void)onIndefiniteGrow {
+    CGRect frame = _viewIndefiniteProgress.frame;
+    frame.origin.x = 0.0f;
+    frame.size.width = CGRectGetWidth(self.frame);
+    
+    [UIView animateWithDuration:_animationTime animations:^{
+        [_viewIndefiniteProgress setFrame:frame];
+    } completion:^(BOOL finished) {
+        [_timer invalidate];
+        _timer = nil;
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteShrink) userInfo:nil repeats:NO];
+    }];
+}
+
+- (void)onIndefiniteShrink {
+    CGRect frame = _viewIndefiniteProgress.frame;
+    frame.origin.x = CGRectGetMidX(self.frame) - 10.0f;
+    frame.size.width = 20.0f;
+    
+    [UIView animateWithDuration:_animationTime animations:^{
+        [_viewIndefiniteProgress setFrame:frame];
+    } completion:^(BOOL finished) {
+        [_timer invalidate];
+        _timer = nil;
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteGrow) userInfo:nil repeats:NO];
+    }];
 }
 
 @end

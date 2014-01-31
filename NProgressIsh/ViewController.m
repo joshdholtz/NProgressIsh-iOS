@@ -34,10 +34,11 @@
     [super viewDidAppear:animated];
     
     _progTop = [NProgressIshView showAtTopOfView:self.view];
-    [_progTop setTrickle:YES];
+    [_progTop trickle:YES];
     
     _progBottom = [NProgressIshView showAtBottomOfView:self.view];
-    [_progBottom setTrickle:YES];
+    [_progBottom setAnimationTime:1.5f];
+    [_progBottom indefinite:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,20 +54,18 @@
 }
 
 - (IBAction)onClickDecrement:(id)sender {
-//    [_nProgressIshViewIB setProgress:(_nProgressIshViewIB.progress - 0.1f)];
-    NSInteger count = [NProgressIshView hideAllProgressForView:self.view];
-    NSLog(@"Count to hide - %d", count);
+    [_nProgressIshViewIB setProgress:(_nProgressIshViewIB.progress - 0.1f)];
 }
 
 - (IBAction)onClickReloadView:(id)sender {
-    [_progTop setTrickle:NO];
-    [_progBottom setTrickle:NO];
+    [_progTop trickle:NO];
+    [_progBottom trickle:NO];
     
     [_progTop setProgress:0.0f animated:NO];
     [_progBottom setProgress:0.0f animated:NO];
     
-    [_progTop setTrickle:YES];
-    [_progBottom setTrickle:YES];
+    [_progTop trickle:YES];
+    [_progBottom trickle:YES];
 }
 
 @end
