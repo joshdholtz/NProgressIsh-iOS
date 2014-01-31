@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIView *viewIndefiniteProgress;
 
 @property (nonatomic, assign) BOOL trickle;
-@property (nonatomic, assign) BOOL indefinite;
+@property (nonatomic, assign) BOOL indeterminateState;
 @property (nonatomic, strong) NSTimer *timer;
 
 @end
@@ -217,9 +217,13 @@ static float const DEFAULT_HEIGHT = 8.0f;
     }
 }
 
-- (void)indefinite:(BOOL)indefinite {
-    if (indefinite == YES && _timer == nil) {
-        _indefinite = indefinite;
+- (void)indeterminate:(BOOL)indeterminate {
+    [self indeterminate:indeterminate startFull:NO];
+}
+
+- (void)indeterminate:(BOOL)indeterminate startFull:(BOOL)startFull {
+    if (indeterminate == YES && _timer == nil) {
+        _indeterminateState = indeterminate;
         
         [self setProgress:0.0f animated:0.0];
         
@@ -227,9 +231,25 @@ static float const DEFAULT_HEIGHT = 8.0f;
         _timer = nil;
         
         [self start];
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteGrow) userInfo:nil repeats:NO];
-    } else if (indefinite == NO) {
-        _indefinite = indefinite;
+        if (startFull == NO) {
+            CGRect frame = _viewIndefiniteProgress.frame;
+            frame.origin.x = 0.0f;
+            frame.size.width = 0.0f;
+            [_viewIndefiniteProgress setFrame:frame];
+            
+            _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteGrow) userInfo:nil repeats:NO];
+        } else {
+            
+            CGRect frame = _viewIndefiniteProgress.frame;
+            frame.origin.x = 0.0f;
+            frame.size.width = CGRectGetWidth(self.frame);
+            [_viewIndefiniteProgress setFrame:frame];
+            
+            _timer = [NSTimer scheduledTimerWithTimeInterval:0.05f target:self selector:@selector(onIndefiniteShrink) userInfo:nil repeats:NO];
+        }
+        
+    } else if (indeterminate == NO) {
+        _indeterminateState = indeterminate;
         [_viewIndefiniteProgress setFrame:CGRectMake(CGRectGetMidX(self.frame), 0.0f, 0.0f, CGRectGetHeight(self.frame))];
         
         [_timer invalidate];

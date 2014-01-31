@@ -28,7 +28,8 @@
 - (void)setGlow:(CGSize)size opacity:(CGFloat)opacity raidus:(CGFloat)radius;
 
 - (void)trickle:(BOOL)trickle;
-- (void)indefinite:(BOOL)indefinite;
+- (void)indeterminate:(BOOL)indeterminate;
+- (void)indeterminate:(BOOL)indeterminate startFull:(BOOL)startFull;
 - (void)done;
 - (void)setProgress:(float)progress animated:(BOOL)animated;
 
