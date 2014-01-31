@@ -125,7 +125,7 @@ static float const DEFAULT_HEIGHT = 8.0f;
     [self addSubview:_viewProgress];
     
     // Sets up indefinite progress view
-    _viewIndefiniteProgress = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.frame), 0.0f, 0.0f, CGRectGetHeight(self.frame))];
+    _viewIndefiniteProgress = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.frame)/2.0f, 0.0f, 0.0f, CGRectGetHeight(self.frame))];
     [_viewIndefiniteProgress setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin];
     [_viewIndefiniteProgress setClipsToBounds:NO];
     [self addSubview:_viewIndefiniteProgress];
@@ -267,7 +267,7 @@ static float const DEFAULT_HEIGHT = 8.0f;
 
 - (void)onIndefiniteShrink {
     CGRect frame = _viewIndefiniteProgress.frame;
-    frame.origin.x = CGRectGetMidX(self.frame) - 10.0f;
+    frame.origin.x = (CGRectGetWidth(self.frame)/2.0f) - 10.0f;
     frame.size.width = 20.0f;
     
     [UIView animateWithDuration:_animationTime animations:^{

@@ -39,6 +39,9 @@
     _progBottom = [NProgressIshView showAtBottomOfView:self.view];
     [_progBottom setAnimationTime:1.5f];
     [_progBottom indefinite:YES];
+    
+    [_nProgressIshViewIB setAnimationTime:1.5f];
+    [_nProgressIshViewIB indefinite:YES];
 }
 
 - (void)didReceiveMemoryWarning
