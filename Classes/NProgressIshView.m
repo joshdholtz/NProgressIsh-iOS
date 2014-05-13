@@ -227,6 +227,9 @@ static float const DEFAULT_HEIGHT = 8.0f;
         
         [self setProgress:0.0f animated:0.0];
         
+        // Cause we gotta see it
+        [_viewIndefiniteProgress setAlpha:1.0f];
+        
         [_timer invalidate];
         _timer = nil;
         
@@ -250,6 +253,10 @@ static float const DEFAULT_HEIGHT = 8.0f;
         
     } else if (indeterminate == NO) {
         _indeterminateState = indeterminate;
+        
+        // Cause we gotta hide it
+        [_viewIndefiniteProgress setAlpha:0.0f];
+        
         [_viewIndefiniteProgress setFrame:CGRectMake(CGRectGetMidX(self.frame), 0.0f, 0.0f, CGRectGetHeight(self.frame))];
         
         [_timer invalidate];
